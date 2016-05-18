@@ -2,23 +2,27 @@
 #define HEAD_H
 
 #include<QGraphicsRectItem>
-#include<QObject>
+//#include<QObject>
 
-class Body: public QGraphicsRectItem{
-    Q_OBJECT
+
+class Body: public QGraphicsRectItem/*, public QObject*/{
+   // Q_OBJECT
 
 public:
     Body();
 
-    touchBody();
+    void touchBody();
 
-    lastPos();
+    void lastPos();
 
-public slots:
-    moveforward();
+//public slots:
+    //void goforward();
 
+    int xpos;
+    int ypos;
 
 private:
+
 
 };
 

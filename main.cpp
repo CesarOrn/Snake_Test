@@ -3,6 +3,8 @@
 #include <QGraphicsView>
 #include<QGraphicsRectItem>
 #include <QApplication>
+#include"Body.h"
+#include "Board.h"
 
 int main(int argc, char *argv[])
 {
@@ -17,16 +19,19 @@ int main(int argc, char *argv[])
 
 
 
-   QGraphicsRectItem *rect = new QGraphicsRectItem();
-   rect->setRect(0,0,400,400);
+   Body *body = new Body();
 
 
+   view->setFixedSize(500,500);
+   scene->setSceneRect(0,0,500,500);
 
-   scene->addItem(rect);
+   Board *board = new Board(10,10);
+   body->setRect(0,0,50,50);
+   board->setWindow_H_W(scene);
+   board->putOnBoard(body);
 
-   view->setFixedSize(800,600);
-   scene->setSceneRect(0,0,800,600);
 
+    scene->addItem(body);
    // Show the picutre
    view->show();
     return a.exec();
