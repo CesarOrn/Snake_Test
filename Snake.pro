@@ -13,9 +13,15 @@ TEMPLATE = app
 
 
 SOURCES += main.cpp \
-    Body.cpp
+    Body.cpp \
+    Board.cpp \
+    Food.cpp \
+    Logic.cpp
 
 HEADERS  += \
-    Body.h
+    Body.h \
+    Board.h \
+    Food.h \
+    Logic.h
 
 FORMS    += mainwindow.ui

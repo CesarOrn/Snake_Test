@@ -2,23 +2,49 @@
 #define HEAD_H
 
 #include<QGraphicsRectItem>
+#include <QKeyEvent>
 #include<QObject>
+#include<QGraphicsScene>
+#include<QList>
 
-class Body: public QGraphicsRectItem{
+
+
+
+class Body: public QObject ,public QGraphicsRectItem/*, public QObject*/{
     Q_OBJECT
 
 public:
     Body();
 
-    touchBody();
+    void keyPressEvent(QKeyEvent *event);
 
-    lastPos();
+    void setIncrament(int h,int w);
+
+
+
+    void setLastX(int x);
+    void setLastY(int y);
+
+    int getLastX();
+    int getLastY();
+
+    QList <QGraphicsItem *> colliding_items;
 
 public slots:
-    moveforward();
+    void goforward();
+
+
 
 
 private:
+
+
+    int yDir;
+    int xDir;
+    int yInc;
+    int xInc;
+    int lPosX;
+    int lPosY;
 
 };
 
