@@ -1,34 +1,42 @@
 #include "Board.h"
-#include "Body.h"
 #include <QGraphicsScene>
 #include <QDebug>
+#include "Food.h"
+#include <stdlib.h>
+#include <QGraphicsScene>
 
 
-Board::Board(int hight,int width)
-{
-    this->hight= hight;
-    this->width= width;
 
+Board::Board(int boardH, int boardW, QGraphicsScene*scean){
 
-}
-
-void Board::putOnBoard(Body *body)
-{
-
-    body->setPos(windWidth*(body->xpos),windHight*(body->ypos));
-    qDebug()<<(body->ypos);
+    this->BoardH=scean->height()/boardH;
+    this->BoardW=scean->width()/boardW;
 
 }
 
-void Board::setWindow_H_W(QGraphicsScene *scene)
+int Board::getBoardH()
 {
-    //set incrament for x and y
-    //when mulitpying where body is at
-
-    this->windHight= scene->height()/hight;
-    qDebug()<<(windHight);
-    this->windWidth= scene->width()/width;
-    qDebug()<<(windWidth);
+    return this->BoardH;
 }
+
+int Board::getBoardW()
+{
+    return this->BoardW;
+}
+
+void Board::getScene(QGraphicsScene *scene){
+    this->scene =scene;
+}
+
+void Board::spawnFood()
+{
+    Food *food = new Food();
+    food->setRect(0,0,5,5);
+    food->setPos(rand()%500,rand()%500);
+    //qDebug()<<"hello";
+    scene->addItem(food);
+}
+
+
 
 

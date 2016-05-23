@@ -1,32 +1,28 @@
 #ifndef BOARD_H
 #define BOARD_H
+
 #include<QGraphicsScene>
-#include"Body.h"
 
 
 class Board{
     
 public:
-    Board(int hight,int width);
+    Board(int boardH,int boardW, QGraphicsScene*scean);
 
-    void putOnBoard(Body *body);
-
-    void setWindow_H_W(QGraphicsScene *scene);
-
-    Body *gameBoard;
+    int getBoardH();
+    int getBoardW();
 
 
-    
-    
+    void getScene(QGraphicsScene *scene);
+
+    void spawnFood();
+
+
 private:
-    int hight;
-    int width;
-    int windHight;
-    int windWidth;
+    QGraphicsScene *scene;
+    int BoardH;
+    int BoardW;
 
 
-
-    
 };
-
 #endif // BOARD_H
