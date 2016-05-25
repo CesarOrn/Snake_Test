@@ -15,7 +15,7 @@ public:
 
     void getScene(QGraphicsScene *scene);
 
-    void spawnFood();
+
 
 
 private:

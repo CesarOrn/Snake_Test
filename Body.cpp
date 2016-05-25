@@ -30,7 +30,7 @@ void Body::keyPressEvent(QKeyEvent *event)
         }
     }
     else if(event->key()==Qt::Key_Up){
-        qDebug()<<"hit up";
+        //qDebug()<<"hit up";
         if(yDir!=1){
             yDir=-1;
             xDir=0;
@@ -74,8 +74,8 @@ void Body::goforward()
 {
     lPosX=this->x();
     lPosY=this->y();
-    qDebug()<<lPosX;
-    qDebug()<<lPosY;
+    //qDebug()<<lPosX;
+    //qDebug()<<lPosY;
     this->setPos(x()+(xDir*xInc),y()+(yDir*yInc));
     logic->upDateBack();
     //colliding_items = collidingItems();

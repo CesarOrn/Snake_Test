@@ -16,12 +16,14 @@ SOURCES += main.cpp \
     Body.cpp \
     Board.cpp \
     Food.cpp \
-    Logic.cpp
+    Logic.cpp \
+    mt.cpp
 
 HEADERS  += \
     Body.h \
     Board.h \
     Food.h \
-    Logic.h
+    Logic.h \
+    mt.h
 
 FORMS    += mainwindow.ui

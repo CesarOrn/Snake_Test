@@ -4,7 +4,9 @@
 #include "Food.h"
 #include <stdlib.h>
 #include <QGraphicsScene>
+#include "Logic.h"
 
+extern Logic *logic;
 
 
 Board::Board(int boardH, int boardW, QGraphicsScene*scean){
@@ -28,14 +30,7 @@ void Board::getScene(QGraphicsScene *scene){
     this->scene =scene;
 }
 
-void Board::spawnFood()
-{
-    Food *food = new Food();
-    food->setRect(0,0,5,5);
-    food->setPos(rand()%500,rand()%500);
-    //qDebug()<<"hello";
-    scene->addItem(food);
-}
+
 
 
 
